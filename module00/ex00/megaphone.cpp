@@ -1,6 +1,21 @@
 #include <iostream>
 #include <string>
 
+char	*to_upper(char *toModify)
+{
+	int	i;
+
+	i = 0;
+	while (toModify[i])
+	{
+		if (toModify[i] >= 'a' && toModify[i] <= 'z')
+			toModify[i] -= 32;
+		i++;
+	}
+	toModify[i] = '\0';
+	return (toModify);
+}
+
 int	main(int argc, char **argv)
 {
 	if (argc == 1)
@@ -10,21 +25,10 @@ int	main(int argc, char **argv)
 		argv++;
 		while (*argv)
 		{
-			std::string str = *argv;
-			std::cout << std::uppercase << str << std::endl;
+			std::cout << std::uppercase << to_upper(*argv);
 			argv++;
 		}
 		std::cout << std::endl;
 	}
+	return (0);
 }
-/*
-
-int main()
-{
-    std::cout 
-              << "blabla with uppercase: " << std::uppercase << "blabla" << std::endl
-              << "BLABLA with nouppercase: " << std::nouppercase << "BLABLA" << std::endl
-              << "uuuuh with uppercase: " << std::uppercase << "uuuuh" << std::endl
-              << "UUUUH with nouppercase: " << std::nouppercase << "UUUUH" << std::endl;
-}
-*/
