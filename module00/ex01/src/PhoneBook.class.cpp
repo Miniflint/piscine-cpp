@@ -29,9 +29,9 @@ void	PhoneBook::addContact(int	x)
 	Log("Enter the first name: ");
 	std::cin.ignore(100, '\n');
 	getline (std::cin, firstName);
-	Log("\nEnter the last name: ");
+	Log("Enter the last name: ");
 	getline (std::cin, lastName);
-	Log("\nEnter the nickname: ");
+	Log("Enter the nickname: ");
 	getline (std::cin, nickname);
 
 	_contact[x].addPerson(x, firstName, lastName, nickname);

@@ -38,18 +38,20 @@ void	PRINT(std::string str)
 
 void	Contact::printAllInfo(void)
 {
-	PRINT_INT(_index);
-	PRINT(_firstName);
-	PRINT(_lastName);
-	PRINT(_nickName);
+	PRINT_INT(this->_index);
+	PRINT(this->_firstName);
+	PRINT(this->_lastName);
+	PRINT(this->_nickName);
 	std::cout << std::endl;
 }
 
 void	Contact::printSpecInfo(void)
 {
-	Log_n("\n");
-	Log_n(_index);
-	Log_n(_firstName);
-	Log_n(_lastName);
-	Log_n(_nickName);
+	std::cout << std::setfill('=') << std::setw(WIDTH * 4) << std::endl;
+	Log_n("");
+	Log_n(this->_index);
+	Log_n(this->_firstName);
+	Log_n(this->_lastName);
+	Log_n(this->_nickName);
+	std::cout << std::setfill('=') << std::setw(WIDTH * 4);
 }

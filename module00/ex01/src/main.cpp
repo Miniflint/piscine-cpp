@@ -1,14 +1,29 @@
 #include "../headers/INC.hpp"
+#include <cstdlib>
+
 
 void SEARCH(PhoneBook *pb, int amount)
 {
-	int	_enterIndex;
+	std::string	_enterIndex;
+	int			realIndex;
 
+	if (amount == 0)
+	{
+		Log("No contact yet");
+		return ;
+	}
 	pb->printInfos(amount);
 	Log_n("Enter the index");
 	Log(">> ");
 	std::cin >> _enterIndex;
-	pb->specSearch(_enterIndex);
+	try {
+		realIndex = std::stoi(_enterIndex);
+	}
+	catch (const std::invalid_argument) {
+		Log_n("Tu te crois drole ???????");
+		exit(EXIT_FAILURE);
+	}
+	pb->specSearch(realIndex);
 }
 
 
@@ -32,6 +47,8 @@ int	main()
 		std::cin >> _whatToDo;
 		if (_whatToDo == "ADD") {
 			pb.addContact(x);
+			x++;
+			amount++;
 		}
 		else if (_whatToDo == "SEARCH") {
 			SEARCH(&pb, amount);
@@ -39,12 +56,6 @@ int	main()
 		else if (_whatToDo == "EXIT") {
 			exit(EXIT_SUCCESS);
 		}
-		else {
-			x--;
-			amount--;
-		}
-		x++;
-		amount++;
 		Log_n("\n");
 	}
 	return (0);

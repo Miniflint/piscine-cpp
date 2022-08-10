@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 char	*to_upper(char *toModify)
 {
@@ -25,7 +24,7 @@ int	main(int argc, char **argv)
 		argv++;
 		while (*argv)
 		{
-			std::cout << std::uppercase << to_upper(*argv);
+			std::cout << to_upper(*argv);
 			argv++;
 		}
 		std::cout << std::endl;
