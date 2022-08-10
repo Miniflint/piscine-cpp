@@ -6,7 +6,7 @@ SRC	= src/main.cpp src/PhoneBook.class.cpp src/Contact.class.cpp src/utils.cpp
 OBJ	= $(SRC:.cpp=.o)
 FLAG= -Wall -Werror -Wextra -fsanitize=address -std=c++98
 CC	= c++ $(FLAG)
-NAME= test_classes
+NAME= MyAwesomeContact
 
 all: $(NAME)
 
@@ -15,7 +15,7 @@ $(NAME): $(OBJ)
 	@printf "$(GRN)\nDone\n$(RST)"
 
 %.o: %.cpp
-	@printf "Compiling: %s %33.333s\r" $< $@
+	@printf "Compiling: %s %33.33s            \r" $< $@
 	@$(CC) -c $< -o $@
 
 clean:
