@@ -20,11 +20,13 @@ int	PhoneBook::__init__(void)
 	return (0);
 }
 
-void	PhoneBook::addContact(int	x)
+void	PhoneBook::addContact(int x)
 {
 	std::string	firstName;
 	std::string	lastName;
 	std::string	nickname;
+	std::string	phoneNumber;
+	std::string	darkestSecret;
 
 	Log("Enter the first name: ");
 	std::cin.ignore(100, '\n');
@@ -33,8 +35,18 @@ void	PhoneBook::addContact(int	x)
 	getline (std::cin, lastName);
 	Log("Enter the nickname: ");
 	getline (std::cin, nickname);
-
-	_contact[x].addPerson(x, firstName, lastName, nickname);
+	Log("Enter the phone number: ");
+	getline (std::cin, phoneNumber);
+	Log("Enter the darkest Secret: ");
+	getline (std::cin, darkestSecret);
+	_contact[x].addPerson(
+			x,
+			firstName,
+			lastName,
+			nickname,
+			phoneNumber,
+			darkestSecret
+	);
 	_amountContact++;
 }
 

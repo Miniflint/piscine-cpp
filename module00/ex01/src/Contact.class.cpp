@@ -17,13 +17,17 @@ void	Contact::addPerson(
 				int index,
 				std::string firstName,
 				std::string lastName,
-				std::string nickname
+				std::string nickname,
+				std::string	phoneNumber,
+				std::string	darkestSecret
 		)
 {
-	_index = index;
-	_firstName = firstName;
-	_lastName = lastName;
-	_nickName = nickname;
+	this->_index = index;
+	this->_firstName = firstName;
+	this->_lastName = lastName;
+	this->_nickName = nickname;
+	this->_phoneNumber = phoneNumber;
+	this->_darkestSecret = darkestSecret;
 }
 
 void	PRINT(std::string str)
@@ -32,7 +36,7 @@ void	PRINT(std::string str)
 		std::cout << str << std::setfill(' ') << std::setw(WIDTH - ft_strlen(str) + 1) << "|";
 	}
 	else {
-		std::cout << str[0] << str[1] << str[2] << str[3] << str[4] << str[5] << str[6] << "..." << "|";
+		std::cout << str.substr(0, 7) << "..." << "|";
 	}
 }
 
@@ -53,5 +57,7 @@ void	Contact::printSpecInfo(void)
 	Log_n(this->_firstName);
 	Log_n(this->_lastName);
 	Log_n(this->_nickName);
+	Log_n(this->_phoneNumber);
+	Log_n(this->_darkestSecret);
 	std::cout << std::setfill('=') << std::setw(WIDTH * 4);
 }
