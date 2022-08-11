@@ -1,7 +1,7 @@
 #include "../headers/INC.hpp"
 
 
-#define PRINT_INT(x) std::cout << x << std::setfill(' ') << std::setw(WIDTH - 1) << "|"
+#define PRINT_INT(x) std::cout << "|" << x << std::setfill(' ') << std::setw(WIDTH - 1) << "|"
 
 Contact::Contact(void)
 {
