@@ -1,31 +1,25 @@
-RST	= \e[0m
-GRN = \e[32m
-RED	= \e[31m
+SRCS	:= main.cpp classes.cpp
+OBJS	:= $(SRCS:%.cpp=%.o)
 
-SRC	= src/main.cpp src/PhoneBook.class.cpp src/Contact.class.cpp src/utils.cpp
-OBJ	= $(SRC:.cpp=.o)
-FLAG= -Wall -Werror -Wextra -fsanitize=address -std=c++98
-CC	= c++ $(FLAG)
-NAME= MyAwesomeContact
+FLAGS	:= -Wall -Wextra -Werror -std=c++98
+CC		:= /usr/bin/g++
 
-all: $(NAME)
+TARGET	:= MyAwesomeContact
 
-$(NAME): $(OBJ)
-	@$(CC) $(OBJ) -o $(NAME)
-	@printf "$(GRN)\nDone\n$(RST)"
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(TARGET)
 
 %.o: %.cpp
-	@printf "Compiling: %s %33.33s            \r" $< $@
-	@$(CC) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@printf "$(RED)Removing $(OBJ)$(RST)\n"
-	@rm -f $(OBJ)
+	rm -rf $(OBJS)
 
 fclean: clean
-	@printf "$(RED)Removing executable $(NAME)$(RST)\n"
-	@rm -f $(NAME)
+	rm -rf $(TARGET)
 
 re: fclean all
 
-.PHONY: re all clean fclean
+.PHONY: re fclean clean all
