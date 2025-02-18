@@ -29,4 +29,5 @@ int main(int argc, char **argv)
         outFile << cText << std::endl;
     }
     inFile.close();
+    outFile.close();
 }
