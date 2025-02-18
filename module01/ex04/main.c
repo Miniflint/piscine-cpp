@@ -3,7 +3,7 @@
 int main(int argc, char **argv)
 {
     if (argc != 4)
-        return ((std::cout << "Not enough parameters" << std::endl), 1);
+        return ((std::cout << "Usage:" << argv[0] << " <file> <search> <replace>" << std::endl), 1);
     std::ifstream   inFile(argv[1]);
     if (!inFile.is_open())
         return ((std::cout << "inFile does not open/exist" << std::endl), 1);
