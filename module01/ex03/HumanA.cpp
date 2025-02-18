@@ -1,10 +1,8 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, std::string weapon_type)
+HumanA::HumanA(std::string name, Weapon &weapon_type) : _name(name), _wp(weapon_type)
 {
-	this->_name = name;
-	this->wp.setType(weapon_type);
-	return ;
+    return ;
 }
 
 HumanA::~HumanA(void)
@@ -12,12 +10,13 @@ HumanA::~HumanA(void)
 	return ;
 }
 
-void	HumanA::attack()
+void    HumanA::setWeapon(Weapon &new_weapon)
 {
-	if (this->wp.getType()[0])
-		std::cout << this->_name << ": attacks with " << this->wp.getType() << std::endl;
-	else
-		std::cout << this->_name << ": has no weapon to attack :( "<< std::endl;
-	return ;
+    this->_wp = new_weapon;
 }
 
+void	HumanA::attack() const
+{
+	std::cout << this->_name << ": attacks with " << this->_wp.getType() << std::endl;
+	return ;
+}
