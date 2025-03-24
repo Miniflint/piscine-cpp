@@ -11,9 +11,10 @@ Fixed::~Fixed(void)
 	return ;
 }
 
-Fixed::Fixed(const Fixed &old) : _fixedFloatingPts(old.getRawBits())
+Fixed::Fixed(const Fixed &old)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	this->_fixedFloatingPts = old.getRawBits();
 	return ;
 }
 
