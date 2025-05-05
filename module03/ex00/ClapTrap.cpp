@@ -39,9 +39,9 @@ void ClapTrap::attack(const std::string &target)
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
-    this->_energyPoint -= (float)amount;
-    if (this->_energyPoint > 0.0f)
-        std::cout << this->_name << " took " << amount << " of damage (" << this->_energyPoint << ")" << std::endl;
+    this->_hitPoint -= (float)amount;
+    if (this->_hitPoint > 0.0f)
+        std::cout << this->_name << " took " << amount << " of damage (" << this->_hitPoint << ")" << std::endl;
     else
         std::cout << this->_name << " died" << std::endl;
 }
