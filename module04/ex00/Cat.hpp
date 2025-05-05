@@ -8,7 +8,7 @@ class Cat : public Animal
 	public:
 		Cat(void);
         Cat(std::string name);
-		Cat(Cat const &new_cat);
+		Cat(Cat const &anim);
         Cat &operator=(Cat &anim);
 		~Cat(void);
 		virtual void makeSound(void) const;
