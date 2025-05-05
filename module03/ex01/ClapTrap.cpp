@@ -45,6 +45,7 @@ void    ClapTrap::takeDamage(unsigned int amount)
     else
         std::cout << this->_name << " died" << std::endl;
 }
+
 void    ClapTrap::beRepaired(unsigned int amount)
 {
     if (this->_hitPoint <= 0)
