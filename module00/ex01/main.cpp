@@ -7,8 +7,11 @@ int main(void)
 
     while (1)
     {
+        _whatToDo = "";
         std::cout << "Choose one:" << std::endl << "ADD, SEARCH, EXIT" << std::endl << ">> ";
         std::cin >> _whatToDo;
+        if (_whatToDo == "")
+            return (1);
         if (!_whatToDo.compare("ADD"))
         {
             pb.addContact();

@@ -88,10 +88,20 @@ void	PhoneBook::addContact(void)
 	std::string	darkestSecret;
 
 	ASK("Enter a first name", firstName);
+	if (firstName == "")
+		return ;
 	ASK("Enter a last name", lastName);
+	if (lastName == "")
+		return ;
 	ASK("Enter a nick name", nickName);
+	if (nickName == "")
+		return ;
 	ASK("Enter a phoneNumber", phoneNumber);
+	if (phoneNumber == "")
+		return ;
 	ASK("Enter the darkest Secret", darkestSecret);
+	if (darkestSecret == "")
+		return ;
 
 	_contact[_amountPeople % maxSize].addContact(
 		_amountPeople % maxSize, firstName,
