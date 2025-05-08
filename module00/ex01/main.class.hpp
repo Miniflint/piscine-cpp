@@ -12,7 +12,7 @@
 # define LOG_N(x) std::cout << x << std::endl;
 # define LOG(x) std::cout << x
 
-# define ASK(display, var) std::cout << display << ": "; std::cin >> var;
+# define ASK(display, var) std::cout << display << ": "; std::getline(std::cin, var);
 
 class Contact
 {
@@ -30,7 +30,7 @@ class Contact
             int	index, std::string firstName,
             std::string lastName, std::string nickName,
             std::string phoneNumber, std::string darkestSecret
-        );
+        );  
         void printContact(void);
         void printInfo(void);
 };

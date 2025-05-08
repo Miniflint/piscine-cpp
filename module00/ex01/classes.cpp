@@ -87,20 +87,20 @@ void	PhoneBook::addContact(void)
 	std::string	phoneNumber;
 	std::string	darkestSecret;
 
-	ASK("Enter a first name", firstName);
-	if (firstName == "")
+    ASK("Enter a first name", firstName);
+    if (std::cin.eof())
 		return ;
 	ASK("Enter a last name", lastName);
-	if (lastName == "")
+	if (std::cin.eof())
 		return ;
 	ASK("Enter a nick name", nickName);
-	if (nickName == "")
+	if (std::cin.eof())
 		return ;
 	ASK("Enter a phoneNumber", phoneNumber);
-	if (phoneNumber == "")
+	if (std::cin.eof())
 		return ;
 	ASK("Enter the darkest Secret", darkestSecret);
-	if (darkestSecret == "")
+	if (std::cin.eof())
 		return ;
 
 	_contact[_amountPeople % maxSize].addContact(
@@ -129,7 +129,10 @@ void	PhoneBook::search(void)
 		return ;
 	this->printAll();
 	std::cout << "Choisisez un contact: " << std::endl << ">> ";
-	std::cin >> sIndex;
+	std::getline(std::cin, sIndex);
+    if (sIndex == "" || std::cin.eof()) {
+        return ;
+    }
 	rIndex = std::atoi(sIndex.c_str());
 	if (rIndex < maxSize && rIndex >= 0)
 		this->_contact[rIndex].printInfo();

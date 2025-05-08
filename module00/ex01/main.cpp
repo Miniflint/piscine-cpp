@@ -9,8 +9,8 @@ int main(void)
     {
         _whatToDo = "";
         std::cout << "Choose one:" << std::endl << "ADD, SEARCH, EXIT" << std::endl << ">> ";
-        std::cin >> _whatToDo;
-        if (_whatToDo == "")
+        std::getline(std::cin, _whatToDo);
+        if (_whatToDo == "" || std::cin.eof())
             return (1);
         if (!_whatToDo.compare("ADD"))
         {
