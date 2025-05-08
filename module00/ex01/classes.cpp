@@ -50,7 +50,7 @@ void	Contact::printContact(void)
 {
 	if (this->_index == -1)
 		return ;
-	PRINT_INT(this->_index);
+	PRINT_INT(this->_index + 1);
 	PRINT(this->_firstName);
 	PRINT(this->_lastName);
 	PRINT(this->_nickName);
@@ -134,7 +134,7 @@ void	PhoneBook::search(void)
         return ;
     }
 	rIndex = std::atoi(sIndex.c_str());
-	if (rIndex < maxSize && rIndex >= 0)
-		this->_contact[rIndex].printInfo();
+	if (rIndex <= maxSize && rIndex > 0)
+		this->_contact[rIndex - 1].printInfo();
 	return ;
 }
