@@ -9,7 +9,7 @@ class Fixed {
 		int					_fixedFloatingPts;
 		static const int	_bits = 8;
 	public:
-		Fixed();
+		Fixed(void);
 		Fixed(int nb);
 		Fixed(float nb);
 		Fixed(const Fixed &old);
