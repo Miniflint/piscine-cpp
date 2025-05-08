@@ -8,7 +8,7 @@ class Fixed {
 		int					_fixedFloatingPts;
 		static const int	bits = 8;
 	public:
-		Fixed();
+		Fixed(void);
         Fixed(const Fixed &old);
 		~Fixed(void);
 		int		getRawBits( void ) const;
