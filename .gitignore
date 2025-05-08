@@ -36,6 +36,12 @@ util
 claptrap
 ./module03/ex00/claptrap
 
+scavtrap
+./module03/ex01/scavtrap
+
+fragtrap
+./module03/ex02/fragtrap
+
 animals
 ./module04/ex00/animals
 
