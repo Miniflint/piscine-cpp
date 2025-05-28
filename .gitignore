@@ -21,10 +21,13 @@ Humans
 ./module01/ex03/Humans
 
 sedIsForLosers
-./module01/ex03/sedIsForLosers
+./module01/ex04/sedIsForLosers
 
 harl
-./module01/ex04/harl
+./module01/ex05/harl
+
+harlFilter
+./module01/ex06/harlFilter
 
 canon
 ./module02/ex00/canon
