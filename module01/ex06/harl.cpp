@@ -56,23 +56,28 @@ void Harl::complain(std::string level)
             break ;
         max_lvl++;
     }
-    if (max_lvl == 4)
-    {
-        std::cout << "This level does not exist" << std::endl;
-        return ;
-    }
     switch (max_lvl) {
 		case 0:
 			(this->*(_s[0].f))();
-			__attribute__((fallthrough));
+			break ;
 		case 1:
+			(this->*(_s[0].f))();
 			(this->*(_s[1].f))();
-			__attribute__((fallthrough));
+			break ;
 		case 2:
+			(this->*(_s[0].f))();
+			(this->*(_s[1].f))();
 			(this->*(_s[2].f))();
-			__attribute__((fallthrough));
+			break ;
 		case 3:
+			(this->*(_s[0].f))();
+			(this->*(_s[1].f))();
+			(this->*(_s[2].f))();
 			(this->*(_s[3].f))();
 			break ;
+		default:
+		    std::cout << "This level does not exist" << std::endl;
+        	break ;
+
     }
 }
