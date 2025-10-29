@@ -14,6 +14,7 @@ int main()
 	meta->makeSound();
     delete i;
     delete j;
+	delete meta;
     std::cout << "==================================================================" << std::endl;
 
     meta = new Animal("test1");
@@ -26,6 +27,7 @@ int main()
 	meta->makeSound();
     delete i;
     delete j;
+	delete meta;
     std::cout << "==================================================================" << std::endl;
 
 	j = new Dog("testheh");
