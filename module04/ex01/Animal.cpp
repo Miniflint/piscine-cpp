@@ -36,3 +36,14 @@ void Animal::makeSound(void) const
 {
     std::cout << "L'animal fait un son" << std::endl;
 }
+
+void Animal::getIdeas(void)
+{
+    std::cout << "L'animal par defaut ne pense pas" << std::endl;
+}
+
+void Animal::setIdea(std::string idea)
+{
+    std::cout << "L'animal par defaut ne pense pas" << std::endl;
+    (void)idea;
+}

@@ -47,7 +47,12 @@ void	Cat::getIdeas(void)
     i = 0;
     while (i < 10)
     {
-        std::cout << "Idea " << i << ": " << this->_brain->getIdeaAtIndex(i) << std::endl;
+        std::cout << "Idea " << i << ": " << *this->_brain->getIdeaAtIndex(i) << std::endl;
         i++;
     }
+}
+
+void    Cat::setIdea(std::string idea)
+{
+    this->_brain->addIdea(idea);
 }

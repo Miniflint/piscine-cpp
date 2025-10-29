@@ -51,3 +51,8 @@ void	Dog::getIdeas(void)
         i++;
     }
 }
+
+void    Dog::setIdea(std::string idea)
+{
+    this->_brain->addIdea(idea);
+}
