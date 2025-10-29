@@ -6,7 +6,7 @@
 class Animal
 {
 	protected:
-		std::string _name;
+		std::string _type;
 		Animal(void);
 		Animal(std::string name);
 		Animal(Animal const &animal);

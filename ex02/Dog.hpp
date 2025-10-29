@@ -6,16 +6,17 @@
 
 class Dog : public Animal
 {
-    private:
-        Brain *_brain;
+	private:
+		Brain	*_brain;
 
-	public:
+	public:	
 		Dog(void);
-        Dog(std::string name);
+        Dog(std::string type);
 		Dog(Dog const &anim);
         Dog &operator=(Dog &anim);
 		~Dog(void);
 		virtual void makeSound(void) const;
+		void	getIdeas(void);
 }; 
 
 #endif
