@@ -3,11 +3,11 @@
 Dog::Dog(void)
 {
     std::cout << "A dog has been initialized" << std::endl;
-    this->_name = "DOG";
+    this->_type = "DOG";
     return ;
 }
 
-Dog::Dog(std::string name) : Animal(name)
+Dog::Dog(std::string type) : Animal(type)
 {
     std::cout << "default Dog constructor with name" << std::endl;
 }
@@ -20,7 +20,7 @@ Dog::Dog(Dog const &anim) : Animal(anim)
 Dog &Dog::operator=(Dog &anim)
 {
     if (this != &anim)
-        this->_name = anim.getType();
+        this->_type = anim.getType();
     return (*this);
 }
 
