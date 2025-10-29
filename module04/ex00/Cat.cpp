@@ -3,7 +3,7 @@
 Cat::Cat(void)
 {
     std::cout << "A Cat has been initialized" << std::endl;
-    this->_name = "CAT";
+    this->_type = "CAT";
     return ;
 }
 
@@ -20,7 +20,7 @@ Cat::Cat(Cat const &anim) : Animal(anim)
 Cat &Cat::operator=(Cat &anim)
 {
     if (this != &anim)
-        this->_name = anim.getType();
+        this->_type = anim.getType();
     return (*this);
 }
 
