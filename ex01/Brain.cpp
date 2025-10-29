@@ -14,7 +14,7 @@ Brain::Brain(void) : _curr_index(0)
     return ;
 }
 
-Brain::Brain(const Brain &src) : _curr_index(0)
+Brain::Brain(const Brain &src) : _curr_index(src._curr_index)
 {
     std::cout << "a brain has been with a copy" << std::endl;
 	getIdeas(src, src._curr_index);
@@ -41,10 +41,9 @@ void    Brain::getIdeas(const Brain &src, int size_ideas)
 	while (i < size_ideas && i < 100)
 	{
 		if (src._ideas[i].length() > 0)
-			this->_ideas[i].assign(src._ideas[i]);
+			this->addIdea(src._ideas[i]);
 		i++;
 	}
-	this->_curr_index = src._curr_index;
 }
 
 const std::string    *Brain::getIdeaAtIndex(int index) const
