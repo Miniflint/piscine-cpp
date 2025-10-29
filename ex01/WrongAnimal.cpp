@@ -5,12 +5,12 @@ WrongAnimal::WrongAnimal(void)
     std::cout << "default WrongAnimal constructor" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(std::string name) : _name(name)
+WrongAnimal::WrongAnimal(std::string type) : _type(type)
 {
     std::cout << "default WrongAnimal constructor with name" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal const &anim) : _name(anim.getType())
+WrongAnimal::WrongAnimal(WrongAnimal const &anim) : _type(anim.getType())
 {
     std::cout << "default WrongAnimal constructor reference" << std::endl;
 }
@@ -18,7 +18,7 @@ WrongAnimal::WrongAnimal(WrongAnimal const &anim) : _name(anim.getType())
 WrongAnimal &WrongAnimal::operator=(WrongAnimal &anim)
 {
     if (this != &anim)
-        this->_name = anim.getType();
+        this->_type = anim.getType();
     return (*this);
 }
 
@@ -29,7 +29,7 @@ WrongAnimal::~WrongAnimal(void)
 
 std::string WrongAnimal::getType(void) const
 {
-    return (this->_name);
+    return (this->_type);
 }
 
 void WrongAnimal::makeSound(void) const
