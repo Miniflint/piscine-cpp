@@ -32,7 +32,6 @@ Cat::~Cat(void)
 {
     std::cout << "A Cat has been Destroyed" << std::endl;
     delete this->_brain;
-    return ;
 }
 
 void Cat::makeSound(void) const
