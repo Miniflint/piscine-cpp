@@ -3,7 +3,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include <vector>
-#include <bits/stdc++.h>
+#include <cstdlib>
 #include <time.h>
 
 int main(void)

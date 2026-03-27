@@ -1,7 +1,6 @@
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
 #include <fstream>
-#include <time.h>
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &PresidentialPardonForm)
 {
@@ -17,4 +16,9 @@ void	PresidentialPardonForm::execute(Bureaucrat const &executor) const
   if (!this->getSigned())
       throw NotSignedException();
   std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+}
+
+std::string PresidentialPardonForm::getTarget() const
+{
+    return (this->_target);
 }

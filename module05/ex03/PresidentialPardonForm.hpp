@@ -7,6 +7,7 @@ class PresidentialPardonForm : public AForm
     private:
         std::string _target;
     public:
+        PresidentialPardonForm(const PresidentialPardonForm &src) : AForm::AForm("PresidentialPardonForm", 25, 5), _target(src.getTarget()) {};
         PresidentialPardonForm() : AForm::AForm("PresidentialPardonForm", 25, 5), _target("default") {};
         PresidentialPardonForm(std::string target) : AForm::AForm("PresidentialPardonForm", 25, 5), _target(target) {};
         ~PresidentialPardonForm() {};
@@ -20,23 +21,7 @@ class PresidentialPardonForm : public AForm
 				}
 		};
         void	execute(Bureaucrat const & executor) const;
+        std::string getTarget() const;
+};
 
-    };
-    
-    // class GradeTooHighException: public std::exception
-    // {
-    // 	public:
-    // 		virtual const char* what() const throw()
-    // 		{
-    // 			return ("AForm: grade too high exception.");
-    // 		}
-    // };
-    // class GradeTooLowException: public std::exception
-    // {
-    // 	public:
-    // 		virtual const char* what() const throw()
-    // 		{
-    // 			return ("AForm: grade too low exception.");
-    // 		}
-    // };
-    #endif
+#endif

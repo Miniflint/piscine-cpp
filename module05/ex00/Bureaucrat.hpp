@@ -6,6 +6,7 @@
 class Bureaucrat
 {
 	public:
+		Bureaucrat() : _name("default"), _grade(150) {};
 		Bureaucrat(const std::string name, int grade);
 		Bureaucrat(Bureaucrat const &bureaucrat);
 		~Bureaucrat();

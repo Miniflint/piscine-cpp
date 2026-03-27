@@ -7,6 +7,7 @@ class RobotomyRequestForm : public AForm
     private:
         std::string _target;
     public:
+        RobotomyRequestForm(const RobotomyRequestForm &src) : AForm::AForm("RobotomyRequestForm", 72, 45), _target(src.getTarget()) {};
         RobotomyRequestForm() : AForm::AForm("RobotomyRequestForm", 72, 45), _target("default") {};
         RobotomyRequestForm(std::string target) : AForm::AForm("RobotomyRequestForm", 72, 45), _target(target) {};
         ~RobotomyRequestForm() {};
@@ -20,23 +21,7 @@ class RobotomyRequestForm : public AForm
 				}
 		};
         void	execute(Bureaucrat const & executor) const;
+        std::string getTarget() const;
+};
 
-    };
-    
-    // class GradeTooHighException: public std::exception
-    // {
-    // 	public:
-    // 		virtual const char* what() const throw()
-    // 		{
-    // 			return ("AForm: grade too high exception.");
-    // 		}
-    // };
-    // class GradeTooLowException: public std::exception
-    // {
-    // 	public:
-    // 		virtual const char* what() const throw()
-    // 		{
-    // 			return ("AForm: grade too low exception.");
-    // 		}
-    // };
-    #endif
+#endif

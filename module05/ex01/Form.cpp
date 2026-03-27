@@ -35,17 +35,14 @@ Form::Form(Form const &Form) : _name(Form.getName()), _signed(0), _gradeSign(For
 	}
 }
 
-void Form::beSigned(Bureaucrat &signant)
+void Form::beSigned(const Bureaucrat &signant)
 {
 	try
 	{
 		if (signant.getGrade() > this->_gradeSign)
 			throw Form::GradeTooLowException();
 		else
-		{
-			std::cout << signant.getName() << " signed " << this->getName() << std::endl;
 			this->_signed = 1;
-		}
 	}
 	catch(const std::exception& e)
 	{

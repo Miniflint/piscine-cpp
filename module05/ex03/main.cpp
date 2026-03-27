@@ -4,7 +4,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include <vector>
-#include <bits/stdc++.h>
+#include <cstdlib>
 #include <time.h>
 
 int main(void)
@@ -15,7 +15,7 @@ int main(void)
 	Bureaucrat 				MidExecute = Bureaucrat("MidExecute", 75);
 	Bureaucrat 				NoExecute = Bureaucrat("NoExecute", 150);
 
-	ShrubberyCreationForm	*Shrubbery = static_cast<ShrubberyCreationForm *>(test.makeForm("shruberry creation", "2exec2sign"));
+	ShrubberyCreationForm	*Shrubbery = static_cast<ShrubberyCreationForm *>(test.makeForm("shrubbery creation", "2exec2sign"));
 	RobotomyRequestForm		*Robotomy = static_cast<RobotomyRequestForm *>(test.makeForm("Robotomy request", "1exec2sign"));
 	PresidentialPardonForm	*Presidential = static_cast<PresidentialPardonForm *>(test.makeForm("pReSiDeNtIaL pArDoN", "1exec1sign"));
 

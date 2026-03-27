@@ -53,3 +53,8 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
                           ...;%@@@@@%%:;;;;,..    Gilo97" << std::endl;
     outfile.close();
 }
+
+std::string ShrubberyCreationForm::getTarget() const
+{
+    return (this->_target);
+}

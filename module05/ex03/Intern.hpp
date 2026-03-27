@@ -10,9 +10,9 @@ class Intern
 {
     public:
         Intern() {};
-        Intern(__attribute_maybe_unused__ const Intern &intern) {};
+        Intern(const Intern &intern);
         ~Intern() {};
-        Intern  operator=(__attribute_maybe_unused__ const Intern &src);
+        Intern  operator=(const Intern &src);
         AForm   *makeForm(std::string whichForm, std::string whichTarget);
 };
 

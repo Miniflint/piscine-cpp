@@ -14,6 +14,7 @@ class AForm
 		const int			_gradeExec;
 	protected:
 		AForm(std::string name, int gradeSign, int gradeExec);
+		AForm() : _name("default"), _signed(false), _gradeSign(150), _gradeExec(150) {};
 	public:
 		virtual ~AForm() = 0;
 		AForm(AForm const &AForm);
@@ -38,7 +39,7 @@ class AForm
 		int				getGradeSign() const;
 		int				getGradeExec() const;
 		bool			getSigned() const;
-		void 			beSigned(Bureaucrat &signant);
+		void 			beSigned(const Bureaucrat &signant);
 		virtual void	execute(Bureaucrat const & executor) const = 0;
 };
 

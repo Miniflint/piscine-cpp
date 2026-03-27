@@ -35,7 +35,7 @@ AForm::AForm(AForm const &AForm) : _name(AForm.getName()), _signed(0), _gradeSig
 	}
 }
 
-void AForm::beSigned(Bureaucrat &signant)
+void AForm::beSigned(const Bureaucrat &signant)
 {
 	try
 	{
@@ -43,7 +43,6 @@ void AForm::beSigned(Bureaucrat &signant)
 			throw AForm::GradeTooLowException();
 		else
 		{
-			std::cout << signant.getName() << " signed " << this->getName() << std::endl;
 			this->_signed = 1;
 		}
 	}

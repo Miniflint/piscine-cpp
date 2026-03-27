@@ -113,7 +113,10 @@ void	Bureaucrat::signForm(Form &f) const
 			std::cout << this->getName() << " couldn’t sign " << f.getName() << " because it is already signed." << std::endl;
 		}
 		else
-			f.beSigned((Bureaucrat &)(*this));
+		{
+			f.beSigned(*this);
+			std::cout << this->_name << " signed " << f.getName() << std::endl;
+		}
 	}
 	catch (const Form::GradeTooLowException& e)
 	{

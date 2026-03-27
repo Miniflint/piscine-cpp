@@ -1,7 +1,12 @@
 #include "Intern.hpp"
 
-Intern Intern::operator=(__attribute_maybe_unused__ const Intern &src)
+Intern::Intern(const Intern &intern) {
+    (void)intern;
+}
+
+Intern Intern::operator=(const Intern &src)
 {
+    (void)src;
     return *this; 
 }
 
@@ -35,11 +40,11 @@ AForm   *Intern::makeForm(std::string whichForm, std::string whichTarget)
 {
     whichForm = lower(whichForm);
     static const std::string names[2][3] = {
-        {"shruberry creation", "robotomy request", "presidential pardon"},
+        {"shrubbery creation", "robotomy request", "presidential pardon"},
         {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"},
     };
     static AForm* (*formCreation[3])(std::string) = {shrubberyCreate, robotomyCreate, presidentialCreate};
-    for (size_t i = 0; i < names[0]->length(); i++)
+    for (size_t i = 0; i < 3; i++)
     {
         if (whichForm == names[0][i])
         {
