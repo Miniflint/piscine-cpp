@@ -1,28 +1,24 @@
-SRC = megaphone.cpp
+SRCS	:= megaphone.cpp
+OBJS	:= $(SRCS:%.cpp=%.o)
 
-OBJ = $(SRC:.cpp=.o)
-FLAGS = -Werror -Wextra -Wall -std=c++98 
-CC = c++ $(FLAGS)
+FLAGS	:= -Wall -Wextra -Werror -std=c++98
+CC		:= /usr/bin/g++
 
-NAME = megaphone
+TARGET	:= megaphone
 
-all: $(NAME)
+all: $(TARGET)
 
-$(NAME) : $(OBJ)
-	@$(CC) $(OBJ) -o $(NAME)
-	@printf "Done\n"
+$(TARGET): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(TARGET)
 
 %.o: %.cpp
-	@printf "Compiling object\n"
-	@$(CC) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@printf "Cleaning...\n"
-	@rm -f $(OBJ)
+	rm -rf $(OBJS)
 
 fclean: clean
-	@printf "Cleaning executable\n"
-	@rm -f $(NAME)
+	rm -rf $(TARGET)
 
 re: fclean all
 

@@ -1,33 +1,20 @@
 #include <iostream>
+#include <cstring>
 
-char	*to_upper(char *toModify)
+int main(int argc, char **argv)
 {
-	int	i;
+    int i;
+    int j;
 
-	i = 0;
-	while (toModify[i])
-	{
-		if (toModify[i] >= 'a' && toModify[i] <= 'z')
-			toModify[i] -= 32;
-		i++;
-	}
-	toModify[i] = '\0';
-	return (toModify);
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		argv++;
-		while (*argv)
-		{
-			std::cout << to_upper(*argv);
-			argv++;
-		}
-		std::cout << std::endl;
-	}
-	return (0);
+    if (argc < 2)
+        return ((std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl), 0);
+    i = 1;
+    while (i < argc)
+    {
+        j = 0;
+        while (argv[i][j])
+            std::cout << (char)(toupper(argv[i][j++]));
+        i++;
+    }
+    return ((std::cout << std::endl), 0);
 }

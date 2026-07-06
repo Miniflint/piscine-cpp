@@ -1,25 +1,20 @@
-#pragma once
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
 
-# include <iostream>
-
-# define log(x) std::cout << x << std::endl
-
+#include <iostream>
 
 class Zombie
 {
 	private:
 		std::string _name;
-
+	
 	public:
-		Zombie(std::string name);
-		Zombie();
+		Zombie(void);
 		~Zombie(void);
-		void setName (std::string name);
-		void announce (void);
-		void zombieName(std::string name);
+		void    announce(void);
+		void	setName(std::string name);
 };
 
-Zombie *zombieHorde (int N, std::string name);
+Zombie	*zombieHorde(int N, std::string name);
+
 #endif

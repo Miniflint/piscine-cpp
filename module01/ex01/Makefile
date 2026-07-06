@@ -1,35 +1,25 @@
-SRC	= src/main.cpp src/Zombie.cpp src/zombieHorde.cpp
-B	= ./objs
+SRCS	:= main.cpp Zombie.cpp zombieHorde.cpp
+OBJS	:= $(SRCS:%.cpp=%.o)
 
-OBJS    = $(SRC:.cpp=.o)
-FLAGS	= -Wall -Wextra -Werror -pedantic -std=c++98
-ifeq ($(DEBUG),debug)
-	FLAGS += -fsanitize=address -g3
-endif
-NAME	= hehe
-CC	= g++ $(FLAGS)
+FLAGS	:= -Wall -Wextra -Werror -std=c++98
+CC		:= /usr/bin/g++
 
-all: $(NAME)
+TARGET	:= zombieHorde
 
-makedir :
-	@mkdir -p $(B)
+all: $(TARGET)
 
-$(NAME) : makedir $(OBJS)
-	@printf "Compiling\n"
-	@$(CC) $(OBJS) -o $(NAME)
+$(TARGET): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(TARGET)
 
-%.o : %.cpp
-	@printf "Compiling %-33.333s\r" $<
-	@$(CC) -c $< -o $@
+%.o: %.cpp
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@printf "Removing .o\n"
-	@rm -f $(OBJS)
+	rm -rf $(OBJS)
 
 fclean: clean
-	@printf "Removing exec\n"
-	@rm -f $(NAME)
+	rm -rf $(TARGET)
 
 re: fclean all
 
-.PHONY: fclean clean all re
+.PHONY: re fclean clean all

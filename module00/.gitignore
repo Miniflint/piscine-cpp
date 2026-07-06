@@ -1,54 +1,52 @@
-MyAwe*
-
-# Prerequisites
-*.d
-
-# Object files
 *.o
-*.ko
-*.obj
-*.elf
+*.vscode
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# all executables
+megaphone
+./module00/ex00/megaphone
 
-# Precompiled Headers
-*.gch
-*.pch
+MyAwesomeContact
+./module00/ex01/MyAwesomeContact
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+BraiiiiiiinnnzzzZ
+./module01/ex00/BraiiiiiiinnnzzzZ
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+zombieHorde
+./module01/ex01/zombieHorde
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+brain
+./module01/ex02/brain
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+Humans
+./module01/ex03/Humans
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+sedIsForLosers
+./module01/ex03/sedIsForLosers
+
+harl
+./module01/ex04/harl
+
+canon
+./module02/ex00/canon
+
+util
+./module02/ex01/util
+./module02/ex02/util
+
+claptrap
+./module03/ex00/claptrap
+
+scavtrap
+./module03/ex01/scavtrap
+
+fragtrap
+./module03/ex02/fragtrap
+
+animals
+./module04/ex00/animals
+
+animals
+./module04/ex01/animals
+
+animals
+./module04/ex02/animals
