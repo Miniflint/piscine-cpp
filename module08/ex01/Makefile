@@ -1,4 +1,4 @@
-SRCS	:= main.cpp Span.cpp
+SRCS	:= main2.cpp Span.cpp
 OBJS	:= $(SRCS:%.cpp=%.o)
 
 FLAGS	:= -Wall -Wextra -Werror -std=c++98

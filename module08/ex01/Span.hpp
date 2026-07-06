@@ -12,7 +12,7 @@ class Span
 		Span(unsigned int sizet);
 		Span(const Span &src);
 		Span &operator=(const Span &src);
-		int				smallestSpan() const;
+		int				shortestSpan() const;
 		int				longestSpan() const;
 		unsigned int	get_sizet(void) const;
 		std::list<int>	get_t(void) const;

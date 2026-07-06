@@ -17,6 +17,7 @@ Span &Span::operator=(const Span &src)
 	this->_span_max = 0;
 	this->_span_min = 0b01111111111111111111111111111111;
 	std::list<int> src_t = src.get_t();
+	this->_t.clear();
 	this->addNumber(src_t.begin(), src_t.end());
 	return (*this);
 }
@@ -80,7 +81,7 @@ void	Span::print_list(void)
 		std::cout << *it << std::endl;
 }
 
-int	Span::smallestSpan() const
+int	Span::shortestSpan() const
 {
 	if (this->_t.size() < 2)
 		throw NoSpanException();
