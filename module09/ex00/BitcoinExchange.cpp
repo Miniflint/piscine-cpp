@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <exception>
+#include <cctype>
 
 static bool	dateIsCorrect(std::string &date) {
 	int year, month, day;
@@ -59,6 +60,16 @@ static bool	checkLine(std::string &line, std::string del, std::pair<std::string,
 	return (true);
 }
 
+static std::string getDelimCSV(std::string &line)
+{
+	std::string delim;
+	std::size_t i = 0;
+	for (i = 0; i < line.size() && std::isalnum(line[i]); i++) ;
+	for (std::size_t j = i; j < line.size() && !std::isalnum(line[j]); j++)
+		delim.push_back(line[j]);
+	return (delim);
+}
+
 static bool getDataFromCSV(std::map<std::string, float> &data, const std::string &dataFile) {
 	std::ifstream	file(dataFile.c_str());
 	if (!file.is_open())
@@ -69,12 +80,13 @@ static bool getDataFromCSV(std::map<std::string, float> &data, const std::string
 	std::string	line;
 	std::pair<std::string, float>	entry;
 	std::getline(file, line);
+	std::string delim = getDelimCSV(line);
 	if (!line.empty() && line[0] <= '9' && line[0] >= '0') {
-		if (checkLine(line, ",", entry, true))
+		if (checkLine(line, delim, entry, true))
 			data[entry.first] = entry.second;
 	}
 	while (std::getline(file, line)) {
-		if (checkLine(line, ",", entry, true))
+		if (checkLine(line, delim, entry, true))
 			data[entry.first] = entry.second;
 	}
 	return (true);
