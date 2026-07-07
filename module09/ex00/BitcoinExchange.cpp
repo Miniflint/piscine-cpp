@@ -61,11 +61,11 @@ static bool	checkLine(std::string &line, std::string del, std::pair<std::string,
 
 static bool getDelimCSV(std::string &line, std::string &delim)
 {
-	std::string::iterator it = line.begin();
+	std::string::const_iterator it = line.begin();
 	for (; it != line.end() && std::isalnum(*it); it++) ;
 	if (it == line.begin())
 		return (false);
-	std::string::iterator ite = it;
+	std::string::const_iterator ite = it;
 	for (; ite != line.end() && !std::isalnum(*ite); ite++) ;
 	if (ite == line.end() || ite == it)
 		return (false);
