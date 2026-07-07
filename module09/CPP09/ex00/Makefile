@@ -1,10 +1,10 @@
-SRCS	:= main2.cpp Span.cpp
+SRCS	:= main.cpp BitcoinExchange.cpp
 OBJS	:= $(SRCS:%.cpp=%.o)
 
 FLAGS	:= -Wall -Wextra -Werror -std=c++98
 CC		:= /usr/bin/g++
 
-TARGET	:= span
+TARGET	:= btc
 
 all: $(TARGET)
 

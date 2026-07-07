@@ -1,10 +1,10 @@
-SRCS	:= main.cpp
+SRCS	:= main.cpp PmergeMe.cpp
 OBJS	:= $(SRCS:%.cpp=%.o)
 
-FLAGS	:= -Wall -Wextra -Werror -std=c++98
+FLAGS	:= -Wall -Wextra -Werror -std=c++98 -g
 CC		:= /usr/bin/g++
 
-TARGET	:= easyfind
+TARGET	:= PmergeMe
 
 all: $(TARGET)
 
@@ -22,4 +22,10 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: re fclean clean all
+build:
+	docker build -t arch .
+	docker run -ti arch
+prune:
+	docker system prune -a --volumes
+
+.PHONY: re fclean clean all build prune

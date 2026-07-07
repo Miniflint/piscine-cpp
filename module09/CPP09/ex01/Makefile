@@ -1,10 +1,10 @@
-SRCS	:= main2.cpp
+SRCS	:= main.cpp RPN.cpp
 OBJS	:= $(SRCS:%.cpp=%.o)
 
 FLAGS	:= -Wall -Wextra -Werror -std=c++98
 CC		:= /usr/bin/g++
 
-TARGET	:= MutantStack
+TARGET	:= RPN
 
 all: $(TARGET)
 

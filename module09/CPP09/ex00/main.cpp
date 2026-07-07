@@ -1,0 +1,16 @@
+#include "BitcoinExchange.hpp"
+#include <iostream>
+
+int	main(int ac, char **av) {
+	if (ac != 2) {
+		std::cerr << "Error: could not open file." << std::endl;
+		return (1);
+	}
+	try {
+		BitcoinExchange btc;
+		return (!btc.run(av[1]));
+	} catch (std::exception &e) {
+		return (1);
+	}
+	return (0);
+}
